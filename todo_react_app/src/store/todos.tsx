@@ -24,10 +24,19 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
 
     const[todos, setTodos] = useState<Todo[]>([])
 
-    const handleAddToDo = (task) => {
+    const handleAddToDo = (task: string) => {
 
-        setTodos(() => {
-            
+        setTodos((prev) => {
+            const newTodos: Todo[] = [
+                {
+                    id: Math.random().toString(),
+                    task: task,
+                    completed: false,
+                    createdAt: new Date()
+                },
+                ...prev
+            ]
+            return newTodos
         })
 
     }
