@@ -1,9 +1,11 @@
+import AddToDo from "./components/addtodo"
 
 const App = () => {
   return (
-    <div>
-      Hello, Todo!
-    </div>
+    <main>
+      <h1> TODO REACT + TYPESCRIPT </h1>
+      <AddToDo />
+    </main>
   )
 }
 
