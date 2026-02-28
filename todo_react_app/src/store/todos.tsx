@@ -51,6 +51,7 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
                 if(todo.id === id) {
                     return {...todo, completed:!todo.completed}
                 }
+                return todo;
             })
             return newTodos;
         })
