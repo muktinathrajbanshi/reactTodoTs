@@ -14,6 +14,7 @@ export type Todo = {
 export type todosContext = {
     todos: Todo[];
     handleAddToDo: (task: string) => void; // call signature
+    toggleTodoAsCompleted:(id:string) => void;
 }
 
 export const todosContext =  createContext<todosContext | null>(null)
@@ -51,11 +52,12 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
                     return {...todo, completed:!todo.completed}
                 }
             })
+            return newTodos;
         })
     } 
 
 
-    return <todosContext.Provider value={{todos, handleAddToDo}}>
+    return <todosContext.Provider value={{todos, handleAddToDo, toggleTodoAsCompleted}}>
         {children}
     </todosContext.Provider>
 }
