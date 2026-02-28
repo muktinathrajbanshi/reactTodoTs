@@ -16,6 +16,12 @@ const Todos = () => {
                         onChange={() => toggleTodoAsCompleted(todo.id)}
                     />
                     <label htmlFor="{`todo-${todo.id}`}">{todo.task}</label>
+
+                    {
+                        todo.completed && (
+                            <button type="button" onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+                        )
+                    }
                 </li>
             })
         }
