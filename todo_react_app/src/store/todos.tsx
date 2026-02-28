@@ -15,6 +15,7 @@ export type todosContext = {
     todos: Todo[];
     handleAddToDo: (task: string) => void; // call signature
     toggleTodoAsCompleted:(id:string) => void;
+    handleDeleteTodo:(id: string) => void;
 }
 
 export const todosContext =  createContext<todosContext | null>(null)
@@ -57,8 +58,14 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
         })
     } 
 
+    // delete the individual date 
+    const handleDeleteTodo = () => {
 
-    return <todosContext.Provider value={{todos, handleAddToDo, toggleTodoAsCompleted}}>
+    }
+
+
+
+    return <todosContext.Provider value={{todos, handleAddToDo, toggleTodoAsCompleted, handleDeleteTodo}}>
         {children}
     </todosContext.Provider>
 }
