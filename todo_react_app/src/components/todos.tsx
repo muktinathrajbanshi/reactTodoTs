@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTodos } from '../store/todos'
+import { useTodos, type Todo } from '../store/todos'
 
 const Todos = () => {
     const {todos} = useTodos();
@@ -9,8 +9,11 @@ const Todos = () => {
   return (
     <ul>
         {
-            filterData.map((dodo) => {
-                
+            filterData.map((todo:Todo) => {
+                return <li key={todo.id}>
+                    <input type="checkbox" id={`todo-${todo.id}`} />
+                    <label htmlFor="">{todo.task}</label>
+                </li>
             })
         }
     </ul>
