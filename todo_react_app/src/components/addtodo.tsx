@@ -1,9 +1,9 @@
 import { useState } from "react"
+import { useTodos } from "../store/todos";
 
 const AddToDo = () => {
-
     const [todo, setTodo] = useState("");
-
+    const {handleAddToDo} = useTodos();
 
     const handleFormSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();

@@ -1,4 +1,4 @@
-import { createContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
 export type TodosProviderProps = {
     children : ReactNode
@@ -13,7 +13,7 @@ export type Todo = {
 
 export type todosContext = {
     todos: Todo[];
-    handleAddToDo: (task: string) => void;
+    handleAddToDo: (task: string) => void; // call signature
 }
 
 export const todosContext =  createContext<todosContext | null>(null)
@@ -46,6 +46,16 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
     </todosContext.Provider>
 }
 
+// consumer 
+export const useTodos = () => {
+    const todosConsumer = useContext(todosContext);
+
+    if(!todosConsumer){
+        throw new Error("useTodos used outside of Provider");
+    }
+
+    return todosConsumer;
+}
 
 
 
