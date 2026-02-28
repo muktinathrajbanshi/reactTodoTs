@@ -11,8 +11,11 @@ const Todos = () => {
         {
             filterData.map((todo:Todo) => {
                 return <li key={todo.id}>
-                    <input type="checkbox" id={`todo-${todo.id}`} />
-                    <label htmlFor="">{todo.task}</label>
+                    <input type="checkbox" id={`todo-${todo.id}`} 
+                        checked={todo.completed}
+                        onChange={() => toggleTodoAsCompleted(todo.id)}
+                    />
+                    <label htmlFor="{`todo-${todo.id}`}">{todo.task}</label>
                 </li>
             })
         }
