@@ -43,6 +43,18 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
 
     }
 
+    // mark completed
+    const toggleTodoAsCompleted = (id: string) => {
+        setTodos((prev) => {
+            let newTodos = prev.map((todo) => {
+                if(todo.id === id) {
+                    return {...todo, completed:!todo.completed}
+                }
+            })
+        })
+    } 
+
+
     return <todosContext.Provider value={{todos, handleAddToDo}}>
         {children}
     </todosContext.Provider>
