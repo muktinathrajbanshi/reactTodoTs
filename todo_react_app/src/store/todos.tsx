@@ -36,6 +36,8 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
                 },
                 ...prev
             ]
+            // console.log("my previous data " + prev);
+            // console.log(newTodos);
             return newTodos
         })
 
