@@ -2,7 +2,7 @@ import React from 'react'
 import { useTodos, type Todo } from '../store/todos'
 
 const Todos = () => {
-    const {todos} = useTodos();
+    const {todos, toggleTodoAsCompleted, handleDeleteTodo} = useTodos();
 
     let filterData = todos;
 
