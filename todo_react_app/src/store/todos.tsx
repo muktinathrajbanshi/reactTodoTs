@@ -61,7 +61,7 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
     // delete the individual date 
     const handleDeleteTodo = () => {
         setTodos((prev) => {
-            let newTodos = prev.map((filter) => filterTodo.id !== id);
+            const newTodos = prev.filter((filterTodo) => filterTodo.id !== id);
             return newTodos;
         })
     }
