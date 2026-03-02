@@ -170,3 +170,59 @@ li input:checked + label {
   text-decoration: line-through;
   color: #aaa;
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  nav {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  form button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  li {
+    flex-direction: row;
+    padding: 10px 12px;
+  }
+
+  li label {
+    font-size: 14px;
+  }
+
+  li button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
