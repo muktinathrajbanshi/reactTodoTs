@@ -149,3 +149,24 @@ li input[type="checkbox"] {
   height: 18px;
   accent-color: var(--neon);
 }
+
+li button {
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+li button:hover {
+  background: var(--pink);
+  color: black;
+  box-shadow: 0 0 10px var(--pink);
+}
+
+li input:checked + label {
+  text-decoration: line-through;
+  color: #aaa;
+}
