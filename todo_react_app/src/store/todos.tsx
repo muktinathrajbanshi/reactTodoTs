@@ -26,7 +26,8 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
 
     const[todos, setTodos] = useState<Todo[]>(() => {
         try {
-            const newTodos = localStorage.getItem("todos") || []
+            const newTodos = localStorage.getItem("todos") || [];
+            return JSON.parse(newTodos) as Todo[]
         } catch (error) {
             return []
             
