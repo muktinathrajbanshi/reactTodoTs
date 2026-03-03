@@ -80,6 +80,15 @@ nav a:hover {
   color: var(--neon);
 }
 
+nav a.active {
+  background: linear-gradient(90deg, var(--neon), var(--purple));
+  color: #000;
+  font-weight: 600;
+  border: 1px solid transparent;
+  box-shadow: 0 0 15px var(--neon);
+  transform: scale(1.05);
+}
+
 form {
   display: flex;
   gap: 10px;
