@@ -1,11 +1,11 @@
-import { useTodos } from '../store/todos'
+import { useTodos, type Todo } from '../store/todos'
 import { useSearchParams } from 'react-router-dom';
 
 const Todos = () => {
     const {todos, toggleTodoAsCompleted, handleDeleteTodo} = useTodos();
 
     const [searchParams] = useSearchParams();
-    let todosData = searchParams.get("todos");
+    const todosData = searchParams.get("todos");
     console.log("todos data", todosData);
     
 
