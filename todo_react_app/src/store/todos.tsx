@@ -29,11 +29,21 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
             // const newTodos = localStorage.getItem("todos") || [];
             // return JSON.parse(newTodos) as Todo[]
 
+            // const storedTodos = localStorage.getItem("todos");
+            // if (!storedTodos) return [];
+            // return JSON.parse(storedTodos) as Todo[];
+
             const storedTodos = localStorage.getItem("todos");
 
             if (!storedTodos) return [];
 
-            return JSON.parse(storedTodos) as Todo[];
+            const parsed = JSON.parse(storedTodos);
+
+            return parsed.map((todo: any) => ({
+                ...todo,            
+                createdAt: new Date(todo.createdAt),
+            }));
+
 
         } catch (error) {
             return []
